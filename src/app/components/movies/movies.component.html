@@ -1,0 +1,18 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title centre">Movies</h1>
+    <hr />
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div *ngFor="let movie of popularList; let i=index" class="col-md-2">
+      <div>
+         <h4>{{ movie.title }}</h4>
+         <p>{{ movie.release_date }}</p>
+         <p><a class="btn btn-default" routerLink="/movie/{{movie.id}}" role="button">View details &raquo;</a></p>
+         <img *ngIf="movie.poster_path" class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" alt="">
+      </div>
+    </div>
+   </div>
+  </div>
+</div>
